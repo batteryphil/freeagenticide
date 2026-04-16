@@ -104,6 +104,16 @@ This works with **any model** — no native tool-calling support required.
 
 ---
 
+## Credits
+
+The recursive multi-agent architecture (tool loop, `call_subordinate`, YAML agent profiles,
+sub-agent spawning) is substantially derived from
+**[agent-zero](https://github.com/frdel/agent-zero)** by Jan Mrázek (frdel) — MIT license.
+
+Full attribution for all borrowed code, models, and libraries: **[CREDITS.md](CREDITS.md)**
+
+---
+
 ## License
 
 MIT
