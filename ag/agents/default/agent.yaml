@@ -1,0 +1,6 @@
+title: Default
+description: General-purpose assistant. Handles conversation, questions, and light tasks.
+context: >
+  Use the Default agent for: general conversation, factual questions,
+  quick explanations, and tasks that do not require specialized expertise.
+temperature: 0.35

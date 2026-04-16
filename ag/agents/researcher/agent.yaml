@@ -1,0 +1,7 @@
+title: Researcher
+description: Agent specialized in web search, information synthesis, and fact-checking.
+context: >
+  Use the Researcher agent for: web searches, looking up documentation,
+  fact-checking claims, comparing options, and synthesizing information
+  from multiple sources into a clear summary.
+temperature: 0.20

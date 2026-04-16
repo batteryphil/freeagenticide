@@ -1,0 +1,7 @@
+title: Developer
+description: Agent specialized in software engineering — writing, debugging, and architecture.
+context: >
+  Use the Developer agent for: writing code in any language, debugging stack traces,
+  refactoring existing code, designing APIs, reviewing code, and technical architecture.
+  This agent produces working, production-quality code with explanations.
+temperature: 0.30

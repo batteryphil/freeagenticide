@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+pip-wheel-metadata/
+*.pth
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Node / UI build
+ui/node_modules/
+ui/dist/
+ui/.vite/
+
+# Logs & temp files
+*.log
+/tmp/
+ag_run/
+
+# Secrets / env
+.env
+.env.*
+config.local.yaml
+
+# Ollama model cache (not tracked)
+*.gguf
+*.bin
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

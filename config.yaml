@@ -1,0 +1,101 @@
+# Antigravity-Local Configuration
+# Environment variables are expanded: ${VAR_NAME}
+
+# ─────────────────────────────────────────────
+# Default routing
+# ─────────────────────────────────────────────
+default_provider: ollama
+default_model: llama3.2:3b
+
+# ─────────────────────────────────────────────
+# Smart router
+# ─────────────────────────────────────────────
+routing:
+  prefer_local: true
+  complexity_threshold: 0.65   # 0.0-1.0; above this → escalate to cloud
+  budget_limit_usd: 5.00       # Hard stop across all cloud calls per session
+  fallback_provider: openai
+  fallback_model: gpt-4o-mini
+
+# ─────────────────────────────────────────────
+# Providers
+# ─────────────────────────────────────────────
+providers:
+  ollama:
+    enabled: true
+    base_url: "http://localhost:11434"
+    timeout: 120
+
+  openai:
+    enabled: true
+    api_key: "${OPENAI_API_KEY}"
+    # base_url: "https://api.openai.com/v1"   # override for Azure
+    # api_version: "2024-02-01"               # Azure only
+    default_model: gpt-4o-mini
+
+  anthropic:
+    enabled: true
+    api_key: "${ANTHROPIC_API_KEY}"
+    default_model: claude-haiku-3-5
+
+  gemini:
+    enabled: true
+    api_key: "${GEMINI_API_KEY}"
+    default_model: gemini-2.0-flash
+
+  mistral:
+    enabled: true
+    api_key: "${MISTRAL_API_KEY}"
+    default_model: mistral-small-latest
+
+  groq:
+    enabled: true
+    api_key: "${GROQ_API_KEY}"
+    default_model: llama3-8b-8192
+
+  cohere:
+    enabled: false
+    api_key: "${COHERE_API_KEY}"
+    default_model: command-r-plus
+
+  together:
+    enabled: false
+    api_key: "${TOGETHER_API_KEY}"
+    default_model: meta-llama/Llama-3-70b-chat-hf
+
+  deepseek:
+    enabled: false
+    api_key: "${DEEPSEEK_API_KEY}"
+    base_url: "https://api.deepseek.com/v1"
+    default_model: deepseek-chat
+
+# ─────────────────────────────────────────────
+# Tools
+# ─────────────────────────────────────────────
+tools:
+  shell:
+    enabled: true
+    require_confirm: true          # Prompt before running shell commands
+    timeout: 30
+  file_ops:
+    enabled: true
+    max_file_size_kb: 512
+  web_search:
+    enabled: true
+    engine: duckduckgo             # duckduckgo | brave | serper
+    brave_api_key: "${BRAVE_API_KEY}"
+    serper_api_key: "${SERPER_API_KEY}"
+    max_results: 5
+  code_exec:
+    enabled: true
+    timeout: 30
+    allow_network: false
+
+# ─────────────────────────────────────────────
+# UI
+# ─────────────────────────────────────────────
+ui:
+  theme: dark                      # dark | light
+  show_routing_decisions: true
+  syntax_highlight: true
+  stream_tokens: true

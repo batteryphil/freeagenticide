@@ -1,0 +1,7 @@
+title: Coder
+description: Minimal, fast code generator. Produces raw code with no prose overhead.
+context: >
+  Use the Coder agent for: pure code generation tasks where you need working code
+  immediately with minimal explanation. Best for boilerplate, snippets, scripts,
+  and one-shot implementations where speed matters more than elaboration.
+temperature: 0.15
